@@ -1,0 +1,152 @@
+{
+  "name": "@builder.io/qwik-city",
+  "description": "The meta-framework for Qwik.",
+  "version": "1.4.0",
+  "bugs": "https://github.com/BuilderIO/qwik/issues",
+  "dependencies": {
+    "@mdx-js/mdx": "2.3.0",
+    "@types/mdx": "^2.0.8",
+    "source-map": "0.7.4",
+    "svgo": "^3.2.0",
+    "undici": "*",
+    "vfile": "^6.0.1",
+    "vite": "^5.0.11",
+    "vite-imagetools": "^6.2.9",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@azure/functions": "^3.5.1",
+    "@builder.io/qwik": "workspace:*",
+    "@microsoft/api-extractor": "^7.39.1",
+    "@netlify/edge-functions": "^2.2.0",
+    "@types/marked": "5.0.1",
+    "@types/mdast": "^4.0.1",
+    "@types/node": "^20.10.8",
+    "@types/refractor": "^3.0.3",
+    "@types/set-cookie-parser": "^2.4.4",
+    "estree-util-value-to-estree": "3.0.1",
+    "github-slugger": "2.0.0",
+    "hast-util-heading-rank": "2.1.1",
+    "hast-util-to-string": "2.0.0",
+    "kleur": "4.1.5",
+    "marked": "5.1.2",
+    "mdast-util-mdx": "^3.0.0",
+    "refractor": "4.8.1",
+    "rehype-autolink-headings": "6.1.1",
+    "remark-frontmatter": "4.0.1",
+    "remark-gfm": "3.0.1",
+    "set-cookie-parser": "^2.6.0",
+    "tsm": "^2.3.0",
+    "typescript": "5.3.3",
+    "unified": "10.1.2",
+    "unist-util-visit": "5.0.0",
+    "uvu": "0.5.6",
+    "yaml": "^2.3.2"
+  },
+  "engines": {
+    "node": ">=16.8.0 <18.0.0 || >=18.11"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs"
+    },
+    "./adapters/azure-swa/vite": {
+      "import": "./lib/adapters/azure-swa/vite/index.mjs",
+      "require": "./lib/adapters/azure-swa/vite/index.cjs"
+    },
+    "./adapters/cloudflare-pages/vite": {
+      "import": "./lib/adapters/cloudflare-pages/vite/index.mjs",
+      "require": "./lib/adapters/cloudflare-pages/vite/index.cjs"
+    },
+    "./adapters/cloud-run/vite": {
+      "import": "./lib/adapters/cloud-run/vite/index.mjs",
+      "require": "./lib/adapters/cloud-run/vite/index.cjs"
+    },
+    "./adapters/bun-server/vite": {
+      "import": "./lib/adapters/bun-server/vite/index.mjs",
+      "require": "./lib/adapters/bun-server/vite/index.cjs"
+    },
+    "./adapters/deno-server/vite": {
+      "import": "./lib/adapters/deno-server/vite/index.mjs",
+      "require": "./lib/adapters/deno-server/vite/index.cjs"
+    },
+    "./adapters/node-server/vite": {
+      "import": "./lib/adapters/node-server/vite/index.mjs",
+      "require": "./lib/adapters/node-server/vite/index.cjs"
+    },
+    "./adapters/netlify-edge/vite": {
+      "import": "./lib/adapters/netlify-edge/vite/index.mjs",
+      "require": "./lib/adapters/netlify-edge/vite/index.cjs"
+    },
+    "./adapters/shared/vite": {
+      "import": "./lib/adapters/shared/vite/index.mjs",
+      "require": "./lib/adapters/shared/vite/index.cjs"
+    },
+    "./adapters/static/vite": {
+      "import": "./lib/adapters/static/vite/index.mjs",
+      "require": "./lib/adapters/static/vite/index.cjs"
+    },
+    "./adapters/vercel-edge/vite": {
+      "import": "./lib/adapters/vercel-edge/vite/index.mjs",
+      "require": "./lib/adapters/vercel-edge/vite/index.cjs"
+    },
+    "./middleware/azure-swa": {
+      "import": "./lib/middleware/azure-swa/index.mjs"
+    },
+    "./middleware/aws-lambda": {
+      "import": "./lib/middleware/aws-lambda/index.mjs"
+    },
+    "./middleware/cloudflare-pages": {
+      "import": "./lib/middleware/cloudflare-pages/index.mjs"
+    },
+    "./middleware/deno": {
+      "import": "./lib/middleware/deno/index.mjs"
+    },
+    "./middleware/bun": {
+      "import": "./lib/middleware/bun/index.mjs"
+    },
+    "./middleware/netlify-edge": {
+      "import": "./lib/middleware/netlify-edge/index.mjs"
+    },
+    "./middleware/node": {
+      "import": "./lib/middleware/node/index.mjs",
+      "require": "./lib/middleware/node/index.cjs"
+    },
+    "./middleware/request-handler": {
+      "import": "./lib/middleware/request-handler/index.mjs",
+      "require": "./lib/middleware/request-handler/index.cjs"
+    },
+    "./static": {
+      "import": "./lib/static/index.mjs",
+      "require": "./lib/static/index.cjs"
+    },
+    "./vite": {
+      "import": "./lib/vite/index.mjs",
+      "require": "./lib/vite/index.cjs"
+    },
+    "./service-worker": {
+      "import": "./lib/service-worker.mjs",
+      "require": "./lib/service-worker.cjs"
+    }
+  },
+  "homepage": "https://qwik.builder.io/",
+  "license": "MIT",
+  "main": "./lib/index.qwik.mjs",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "qwik": "./lib/index.qwik.mjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuilderIO/qwik.git",
+    "directory": "packages/qwik-city"
+  },
+  "scripts": {
+    "build": "cd runtime && vite build --mode lib -c vite.config.ts"
+  },
+  "type": "module",
+  "types": "./lib/index.d.ts"
+}

@@ -1,0 +1,37 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.2/containers/docker-existing-dockerfile
+{
+  "name": "Qwik devcontainer",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "rust-lang.rust-analyzer",
+    "hdevalke.rust-test-lens",
+    "ms-playwright.playwright",
+    "manucorporat.vermoji",
+    "ms-azuretools.vscode-docker",
+    "mitsuhiko.insta",
+    "silvenon.mdx",
+    "csstools.postcss"
+  ],
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "waitFor": "updateContentCommand",
+  "updateContentCommand": "corepack prepare & pnpm install",
+  "forwardPorts": [3300, 9229],
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["CONTRIBUTING.md"]
+    }
+  },
+  "portsAttributes": {
+    "3300": {
+      "label": "Serve",
+      "onAutoForward": "openPreview"
+    }
+  }
+}

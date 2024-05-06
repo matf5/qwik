@@ -1,0 +1,172 @@
+---
+source: packages/qwik/src/optimizer/core/src/test.rs
+expression: output
+---
+==INPUT==
+
+
+import { $, component$ } from '@builder.io/qwik';
+
+export const Foo = component$(({foo}) => {
+    const arg0 = 20;
+    return $(() => {
+        const fn = ({aaa}) => aaa;
+        return (
+            <div>
+              {foo}{fn()}{arg0}
+            </div>
+        )
+    });
+})
+
+export const Bar = component$(({bar}) => {
+    return $(() => {
+        return (
+            <div>
+              {bar}
+            </div>
+        )
+    });
+})
+
+============================= foo_component_htdrsvublie.jsx (ENTRY POINT)==
+
+import { qrl } from "@builder.io/qwik";
+export const Foo_component_HTDRsvUbLiE = (props)=>{
+    return /*#__PURE__*/ qrl(()=>import("./foo_component_1_dvu6fitwgly"), "Foo_component_1_DvU6FitWglY", [
+        props
+    ]);
+};
+
+
+Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";yCAG8B,SAAW;IAErC;;;AAQJ\"}")
+/*
+{
+  "origin": "test.tsx",
+  "name": "Foo_component_HTDRsvUbLiE",
+  "entry": null,
+  "displayName": "Foo_component",
+  "hash": "HTDRsvUbLiE",
+  "canonicalFilename": "foo_component_htdrsvublie",
+  "extension": "jsx",
+  "parent": null,
+  "ctxKind": "function",
+  "ctxName": "component$",
+  "captures": false,
+  "loc": [
+    83,
+    278
+  ]
+}
+*/
+============================= test.jsx ==
+
+import { componentQrl } from "@builder.io/qwik";
+import { qrl } from "@builder.io/qwik";
+export const Foo = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./foo_component_htdrsvublie"), "Foo_component_HTDRsvUbLiE"));
+export const Bar = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./bar_component_l80ps8hxf1y"), "Bar_component_L80pS8Hxf1Y"));
+
+
+Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;AAGA,OAAO,MAAM,oBAAM,wGAUjB;AAEF,OAAO,MAAM,oBAAM,wGAQjB\"}")
+============================= bar_component_l80ps8hxf1y.jsx (ENTRY POINT)==
+
+import { qrl } from "@builder.io/qwik";
+export const Bar_component_L80pS8Hxf1Y = (props)=>{
+    return /*#__PURE__*/ qrl(()=>import("./bar_component_1_0xsynsnvu3k"), "Bar_component_1_0xSyNSnVu3k", [
+        props
+    ]);
+};
+
+
+Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";yCAe8B,SAAW;IACrC;;;AAOJ\"}")
+/*
+{
+  "origin": "test.tsx",
+  "name": "Bar_component_L80pS8Hxf1Y",
+  "entry": null,
+  "displayName": "Bar_component",
+  "hash": "L80pS8Hxf1Y",
+  "canonicalFilename": "bar_component_l80ps8hxf1y",
+  "extension": "jsx",
+  "parent": null,
+  "ctxKind": "function",
+  "ctxName": "component$",
+  "captures": false,
+  "loc": [
+    311,
+    438
+  ]
+}
+*/
+============================= foo_component_1_dvu6fitwgly.jsx (ENTRY POINT)==
+
+import { useLexicalScope } from "@builder.io/qwik";
+export const Foo_component_1_DvU6FitWglY = ()=>{
+    const [props] = useLexicalScope();
+    const fn = ({ aaa  })=>aaa;
+    return <div>
+
+              {props.foo}{fn()}{20}
+
+            </div>;
+};
+export { _hW } from "@builder.io/qwik";
+
+
+Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";2CAKa;;IACL,MAAM,KAAK,CAAC,EAAC,IAAG,EAAC,GAAK;IACtB,QACK,IAAI;;cACH,OANkB,KAMZ,MALH,GAKc;;YACnB,EAAE\"}")
+/*
+{
+  "origin": "test.tsx",
+  "name": "Foo_component_1_DvU6FitWglY",
+  "entry": null,
+  "displayName": "Foo_component_1",
+  "hash": "DvU6FitWglY",
+  "canonicalFilename": "foo_component_1_dvu6fitwgly",
+  "extension": "jsx",
+  "parent": "Foo_component_HTDRsvUbLiE",
+  "ctxKind": "function",
+  "ctxName": "$",
+  "captures": true,
+  "loc": [
+    130,
+    274
+  ]
+}
+*/
+============================= bar_component_1_0xsynsnvu3k.jsx (ENTRY POINT)==
+
+import { useLexicalScope } from "@builder.io/qwik";
+export const Bar_component_1_0xSyNSnVu3k = ()=>{
+    const [props] = useLexicalScope();
+    return <div>
+
+              {props.bar}
+
+            </div>;
+};
+export { _hW } from "@builder.io/qwik";
+
+
+Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";2CAgBa;;IACL,QACK,IAAI;;cACH,OAJkB,IAIb;;YACP,EAAE\"}")
+/*
+{
+  "origin": "test.tsx",
+  "name": "Bar_component_1_0xSyNSnVu3k",
+  "entry": null,
+  "displayName": "Bar_component_1",
+  "hash": "0xSyNSnVu3k",
+  "canonicalFilename": "bar_component_1_0xsynsnvu3k",
+  "extension": "jsx",
+  "parent": "Bar_component_L80pS8Hxf1Y",
+  "ctxKind": "function",
+  "ctxName": "$",
+  "captures": true,
+  "loc": [
+    337,
+    434
+  ]
+}
+*/
+== DIAGNOSTICS ==
+
+[]
