@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { $, component$ } from '@builder.io/qwik';
+import { $, component$ } from '@decoration/qwik';
 export function App() {
     const Header = component$(() => {
         console.log("mount");
@@ -18,7 +18,7 @@ export function App() {
 
 ============================= app_header_component_b9f3yeqco1w.tsx (ENTRY POINT)==
 
-import { qrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
 export const App_Header_component_B9F3YeqcO1w = ()=>{
     console.log("mount");
     return <div onClick={/*#__PURE__*/ qrl(()=>import("./app_header_component_div_onclick_ao7ui7iw6oq"), "App_Header_component_div_onClick_aO7uI7Iw6oQ")}/>;
@@ -48,7 +48,6 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 ============================= app_header_component_div_onclick_ao7ui7iw6oq.tsx (ENTRY POINT)==
 
 export const App_Header_component_div_onClick_aO7uI7Iw6oQ = (ctx)=>console.log(ctx);
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\"4DAM4B,CAAC,MAAQ,QAAQ,GAAG,CAAC\"}")
@@ -73,8 +72,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= test.tsx ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export function App() {
     const Header = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./app_header_component_b9f3yeqco1w"), "App_Header_component_B9F3YeqcO1w"));
     return Header;

@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { $, component$, h, Fragment } from '@builder.io/qwik';
+import { $, component$, h, Fragment } from '@decoration/qwik';
 
 export const Lightweight = (props) => {
     return (
@@ -47,12 +47,12 @@ export const Foo = component$((props) => {
 
 ============================= test.js ==
 
-import { _jsxQ } from "@builder.io/qwik";
-import { _jsxS } from "@builder.io/qwik";
-import { _jsxC } from "@builder.io/qwik";
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
-import { Fragment as _Fragment } from "@builder.io/qwik/jsx-runtime";
+import { _jsxQ } from "@decoration/qwik";
+import { _jsxS } from "@decoration/qwik";
+import { _jsxC } from "@decoration/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
+import { Fragment as _Fragment } from "@decoration/qwik/jsx-runtime";
 export const Lightweight = (props)=>{
     return /*#__PURE__*/ _jsxQ("div", null, null, /*#__PURE__*/ _jsxC(_Fragment, {
         children: [
@@ -71,7 +71,7 @@ export const Foo = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./fo
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;;;;;AAGA,OAAO,MAAM,cAAc,CAAC,QAAU;IAClC,qBACI,MAAC,iCACG;;0BACI,MAAC;0BACD,MAAC;gBAAQ,GAAG,KAAK;;;;AAIjC,EAAE;AAEF,OAAO,MAAM,oBAAM,wGAuBhB;IACC,SAAS;AACb,GAAG\"}")
 ============================= foo_component_htdrsvublie.js (ENTRY POINT)==
 
-import { qrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
 export const Foo_component_HTDRsvUbLiE = (props)=>{
     return /*#__PURE__*/ qrl(()=>import("./foo_component_1_dvu6fitwgly"), "Foo_component_1_DvU6FitWglY", [
         props
@@ -101,13 +101,13 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= foo_component_1_dvu6fitwgly.js (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 import { Lightweight } from "./test";
-import { Fragment as _Fragment } from "@builder.io/qwik/jsx-runtime";
-import { _jsxC } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
+import { Fragment as _Fragment } from "@decoration/qwik/jsx-runtime";
+import { _jsxC } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
 export const Foo_component_1_DvU6FitWglY = ()=>{
-    const [props] = useLexicalScope();
+    const [props] = useLexicalScope("Foo_component_1_DvU6FitWglY");
     return /*#__PURE__*/ _jsxQ("div", null, null, [
         /*#__PURE__*/ _jsxC(_Fragment, {
             children: [
@@ -139,7 +139,6 @@ export const Foo_component_1_DvU6FitWglY = ()=>{
         }, children, 3, null)
     ], 1, "u6_4");
 };
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;;;;2CAea;;IACL,qBACI,MAAC;sBACG;;8BACI,MAAC;oBAAI,OAAM;;8BACX,MAAC;oBAAI,OAAM;;8BACX,MAAC;oBAAI,OAAM;mBAAQ;;;sBAEvB,MAAC;YAAI,OAAM;yBACP,MAAC;YAAa,GAAG,KAAK;;sBAE1B,MAAC;YAAI,OAAM;;0BACP,MAAC;0BACD,MAAC;0BACD,MAAC;;sBAEL,MAAC;YAAI,OAAM;WACN\"}")

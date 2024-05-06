@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useStore } from '@builder.io/qwik';
+import { component$, useStore } from '@decoration/qwik';
 
 export const App = component$(() => {
     return (
@@ -17,8 +17,8 @@ export const App = component$(() => {
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrlDEV } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrlDEV } from "@decoration/qwik";
 export const App = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrlDEV(()=>import("./app_component_ckepmxzlub0"), "App_component_ckEPmXZlub0", {
     file: "/user/qwik/src/test.tsx",
     lo: 90,
@@ -30,9 +30,9 @@ export const App = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrlDEV(()=>import(".
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;AAGA,OAAO,MAAM,oBAAM;;;;;IAMhB\"}")
 ============================= app_component_ckepmxzlub0.js (ENTRY POINT)==
 
-import { _jsxC } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { qrlDEV } from "@builder.io/qwik";
+import { _jsxC } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { qrlDEV } from "@decoration/qwik";
 export const App_component_ckEPmXZlub0 = ()=>{
     return /*#__PURE__*/ _jsxC(Cmp, {
         children: /*#__PURE__*/ _jsxQ("p", null, {

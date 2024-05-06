@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, $, useStyles$ } from '@builder.io/qwik';
+import { component$, $, useStyles$ } from '@decoration/qwik';
 
 export const App = component$((props) => {
     useStyles$('hola');
@@ -16,8 +16,8 @@ export const App = component$((props) => {
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const App = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./app_component_ckepmxzlub0.js"), "App_component_ckEPmXZlub0"));
 
 
@@ -49,8 +49,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= app_component_ckepmxzlub0.js (ENTRY POINT)==
 
-import { qrl } from "@builder.io/qwik";
-import { useStylesQrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
+import { useStylesQrl } from "@decoration/qwik";
 export const App_component_ckEPmXZlub0 = (props)=>{
     useStylesQrl(/*#__PURE__*/ qrl(()=>import("./app_component_usestyles_t35nsa5uv7u.js"), "App_component_useStyles_t35nSa5UV7U"));
     return /*#__PURE__*/ qrl(()=>import("./app_component_1_w0t0o3qmovu.js"), "App_component_1_w0t0o3QMovU");
@@ -79,9 +79,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= app_component_1_w0t0o3qmovu.js (ENTRY POINT)==
 
-import { _jsxQ } from "@builder.io/qwik";
+import { _jsxQ } from "@decoration/qwik";
 export const App_component_1_w0t0o3QMovU = ()=>/*#__PURE__*/ _jsxQ("div", null, null, null, 3, "u6_0");
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";2CAKa,kBACL,MAAC\"}")

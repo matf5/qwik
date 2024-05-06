@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useStore, Slot } from '@builder.io/qwik';
+import { component$, useStore, Slot } from '@decoration/qwik';
 
 export const App = component$((props: Stuff) => {
     return (
@@ -17,11 +17,11 @@ export const App = component$((props: Stuff) => {
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { _jsxC } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
-import { Slot } from '@builder.io/qwik';
+import { componentQrl } from "@decoration/qwik";
+import { _jsxC } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
+import { Slot } from '@decoration/qwik';
 const App_component_ckEPmXZlub0 = (props)=>{
     return /*#__PURE__*/ _jsxQ("div", null, null, /*#__PURE__*/ _jsxC(Slot, null, 3, "u6_0"), 1, "u6_1");
 };

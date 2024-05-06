@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useStore } from '@builder.io/qwik';
+import { component$, useStore } from '@decoration/qwik';
 
 export const App = component$((props: Stuff) => {
     return (
@@ -17,8 +17,8 @@ export const App = component$((props: Stuff) => {
 
 ============================= test.jsx ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
 export const App = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl((props)=>{
     return <Cmp>
 

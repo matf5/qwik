@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, $, useStore, wrap, useEffect } from '@builder.io/qwik';
+import { component$, $, useStore, wrap, useEffect } from '@decoration/qwik';
 
 export const useMemoQrl = (qrt) => {
     useEffect(qrt);
@@ -31,9 +31,9 @@ export const Lightweight = (props) => {
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
-import { wrap, useEffect } from '@builder.io/qwik';
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
+import { wrap, useEffect } from '@decoration/qwik';
 export const useMemoQrl = (qrt)=>{
     useEffect(qrt);
 };
@@ -47,9 +47,9 @@ export const Lightweight = (props)=>{
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;AACA,SAAkC,IAAI,EAAE,SAAS,QAAQ,mBAAmB;AAE5E,OAAO,MAAM,aAAa,CAAC,MAAQ;IAC/B,UAAU;AACd,EAAE;AAEF,OAAO,MAAM,WAAW,KAAK,YAAY;AAEzC,OAAO,MAAM,oBAAM,wGAQhB;AAEH,OAAO,MAAM,cAAc,CAAC,QAAU;IAClC;AAGJ,EAAG\"}")
 ============================= app_component_usememo_6sc9kvki3y0.js (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 export const App_component_useMemo_6Sc9KVki3Y0 = ()=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("App_component_useMemo_6Sc9KVki3Y0");
     console.log(state.count);
 };
 
@@ -103,9 +103,9 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= app_component_ckepmxzlub0.js (ENTRY POINT)==
 
-import { qrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
 import { useMemoQrl } from "./test";
-import { useStore } from "@builder.io/qwik";
+import { useStore } from "@decoration/qwik";
 export const App_component_ckEPmXZlub0 = (props)=>{
     const state = useStore({
         count: 0
@@ -141,16 +141,15 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= app_component_1_w0t0o3qmovu.js (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
-import { _fnSignal } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
 export const App_component_1_w0t0o3QMovU = ()=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("App_component_1_w0t0o3QMovU");
     return /*#__PURE__*/ _jsxQ("div", null, null, _fnSignal((p0)=>p0.count, [
         state
     ], "p0.count"), 3, "u6_0");
 };
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;;2CAca;;yBACL,MAAC,mCAAK,GAAM,KAAK\"}")

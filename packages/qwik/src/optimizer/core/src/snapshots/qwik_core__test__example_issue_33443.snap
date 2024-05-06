@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$, useSignal } from '@decoration/qwik';
 
 export const Issue3742 = component$(({description = '', other}: any) => {
     const counter = useSignal(0);
@@ -23,14 +23,14 @@ export const Issue3742 = component$(({description = '', other}: any) => {
   
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { _fnSignal } from "@builder.io/qwik";
-import { useLexicalScope } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { useSignal } from '@builder.io/qwik';
+import { componentQrl } from "@decoration/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { useLexicalScope } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { useSignal } from '@decoration/qwik';
 const Issue3742_component_div_button_onClick_a504K2BCEXg = ()=>{
-    const [counter] = useLexicalScope();
+    const [counter] = useLexicalScope("Issue3742_component_div_button_onClick_a504K2BCEXg");
     return counter.value++;
 };
 const Issue3742_component_svSy0PlWTAw = (props)=>{

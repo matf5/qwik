@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$ } from '@builder.io/qwik';
+import { component$ } from '@decoration/qwik';
 import { sibling } from './sibling';
 
 export default component$(() => {
@@ -18,8 +18,8 @@ export default component$(() => {
 
 ============================= src/routes/_repl/[id]/[[...slug]].js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export default /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("../../../../entry______slug__.js"), "_____slug___component_vgk6N3QaQd4"));
 
 
@@ -52,8 +52,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/src/routes/_repl/[id]/[[...sl
 */
 ============================= _____slug___component_vgk6n3qaqd4.js ==
 
-import { _jsxQ } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const _____slug___component_vgk6N3QaQd4 = ()=>{
     return /*#__PURE__*/ _jsxQ("div", null, {
         onClick$: /*#__PURE__*/ qrl(()=>import("./_____slug___component_div_onclick_oesymv0so3o.js"), "_____slug___component_div_onClick_OesyMV0SO3o")

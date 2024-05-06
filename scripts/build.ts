@@ -34,6 +34,7 @@ import { buildQwikWorker } from './qwik-worker';
 import { buildQwikLabs } from './qwik-labs';
 import { watch, copyFile } from 'fs/promises';
 import { join } from 'path';
+import { buildDecorationQwik } from './decoration-qwik';
 
 /**
  * Complete a full build for all of the package's submodules. Passed in config has all the correct
@@ -92,6 +93,9 @@ export async function build(config: BuildConfig) {
 
     if (config.eslint) {
       await buildEslint(config);
+    }
+    if (config.decorationQwik) {
+      await buildDecorationQwik(config);
     }
 
     if (config.platformBinding) {

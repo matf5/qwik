@@ -11,6 +11,7 @@ use std::path::Path;
 
 use anyhow::{Context, Error};
 use path_slash::PathExt;
+use rayon::vec;
 use swc_atoms::JsWord;
 use swc_common::comments::{SingleThreadedComments, SingleThreadedCommentsMap};
 use swc_common::{sync::Lrc, SourceMap, DUMMY_SP};
@@ -40,6 +41,7 @@ pub struct NewModuleCtx<'a> {
 }
 
 pub fn new_module(ctx: NewModuleCtx) -> Result<(ast::Module, SingleThreadedComments), Error> {
+
     let comments = SingleThreadedComments::from_leading_and_trailing(
         ctx.leading_comments,
         ctx.trailing_comments,
@@ -52,18 +54,22 @@ pub fn new_module(ctx: NewModuleCtx) -> Result<(ast::Module, SingleThreadedComme
     };
 
     let has_scoped_idents = ctx.need_transform && !ctx.scoped_idents.is_empty();
+    // 把useLexicalScope函数引入
     let use_lexical_scope = if has_scoped_idents {
         let new_local = id!(private_ident!(&USE_LEXICAL_SCOPE.clone()));
         module
             .body
             .push(create_synthetic_named_import(&new_local, ctx.core_module));
+        println!("ctx.core_module: {:?}", ctx.core_module);
         Some(new_local)
     } else {
         None
     };
 
     for id in ctx.local_idents {
+        // 处理变量是import的情况
         if let Some(import) = ctx.global.imports.get(id) {
+            println!("import: {:?}", id);
             let specifier = match import.kind {
                 ImportKind::Named => ast::ImportSpecifier::Named(ast::ImportNamedSpecifier {
                     is_type_only: false,
@@ -107,6 +113,8 @@ pub fn new_module(ctx: NewModuleCtx) -> Result<(ast::Module, SingleThreadedComme
                     },
                 )));
         } else if let Some(export) = ctx.global.exports.get(id) {
+            // 对于在上级是export的变量, 需要从上级引入
+            println!("export: {:?}", id);
             let filename = if ctx.explicit_extensions {
                 &ctx.path.file_name
             } else {
@@ -145,18 +153,22 @@ pub fn new_module(ctx: NewModuleCtx) -> Result<(ast::Module, SingleThreadedComme
     let expr = if let Some(use_lexical_scope) = use_lexical_scope {
         Box::new(transform_function_expr(
             *ctx.expr,
-            &use_lexical_scope,
+            &use_lexical_scope, 
             ctx.scoped_idents,
+            ctx.name
         ))
     } else {
         ctx.expr
     };
 
     module.body.push(create_named_export(expr, ctx.name));
-    if ctx.need_handle_watch {
-        // Inject qwik internal import
-        add_handle_watch(&mut module.body, ctx.core_module);
-    }
+    // print ctx.name ctx.path
+    println!("ctx.name: {}", ctx.name);
+    // println!("ctx.path: {:?}", ctx.path);
+    // if ctx.need_handle_watch {
+    //     // Inject qwik internal import
+    //     add_handle_watch(&mut module.body, ctx.core_module);
+    // }
     Ok((module, comments))
 }
 
@@ -311,9 +323,9 @@ fn new_entry_module(
                 },
             )));
     }
-    if need_handle_watch {
-        add_handle_watch(&mut module.body, core_module);
-    }
+    // if need_handle_watch {
+    //     add_handle_watch(&mut module.body, core_module);
+    // }
     module
 }
 
@@ -321,12 +333,13 @@ pub fn transform_function_expr(
     expr: ast::Expr,
     use_lexical_scope: &Id,
     scoped_idents: &[Id],
+    name: &str
 ) -> ast::Expr {
     match expr {
         ast::Expr::Arrow(node) => {
-            ast::Expr::Arrow(transform_arrow_fn(node, use_lexical_scope, scoped_idents))
+            ast::Expr::Arrow(transform_arrow_fn(node, use_lexical_scope, scoped_idents, name))
         }
-        ast::Expr::Fn(node) => ast::Expr::Fn(transform_fn(node, use_lexical_scope, scoped_idents)),
+        ast::Expr::Fn(node) => ast::Expr::Fn(transform_fn(node, use_lexical_scope, scoped_idents, name)),
         _ => expr,
     }
 }
@@ -335,11 +348,12 @@ fn transform_arrow_fn(
     arrow: ast::ArrowExpr,
     use_lexical_scope: &Id,
     scoped_idents: &[Id],
+    name: &str
 ) -> ast::ArrowExpr {
     match arrow.body {
         box ast::BlockStmtOrExpr::BlockStmt(mut block) => {
             let mut stmts = Vec::with_capacity(1 + block.stmts.len());
-            stmts.push(create_use_lexical_scope(use_lexical_scope, scoped_idents));
+            stmts.push(create_use_lexical_scope(use_lexical_scope, scoped_idents, name));
             stmts.append(&mut block.stmts);
             ast::ArrowExpr {
                 body: Box::new(ast::BlockStmtOrExpr::BlockStmt(ast::BlockStmt {
@@ -352,7 +366,7 @@ fn transform_arrow_fn(
         box ast::BlockStmtOrExpr::Expr(expr) => {
             let mut stmts = Vec::with_capacity(2);
             if !scoped_idents.is_empty() {
-                stmts.push(create_use_lexical_scope(use_lexical_scope, scoped_idents));
+                stmts.push(create_use_lexical_scope(use_lexical_scope, scoped_idents, name));
             }
             stmts.push(create_return_stmt(expr));
             ast::ArrowExpr {
@@ -366,7 +380,7 @@ fn transform_arrow_fn(
     }
 }
 
-fn transform_fn(node: ast::FnExpr, use_lexical_scope: &Id, scoped_idents: &[Id]) -> ast::FnExpr {
+fn transform_fn(node: ast::FnExpr, use_lexical_scope: &Id, scoped_idents: &[Id], name: &str) -> ast::FnExpr {
     let mut stmts = Vec::with_capacity(
         1 + node
             .function
@@ -375,7 +389,7 @@ fn transform_fn(node: ast::FnExpr, use_lexical_scope: &Id, scoped_idents: &[Id])
             .map_or(0, |body| body.stmts.len()),
     );
     if !scoped_idents.is_empty() {
-        stmts.push(create_use_lexical_scope(use_lexical_scope, scoped_idents));
+        stmts.push(create_use_lexical_scope(use_lexical_scope, scoped_idents, name));
     }
     if let Some(mut body) = node.function.body {
         stmts.append(&mut body.stmts);
@@ -399,7 +413,11 @@ pub const fn create_return_stmt(expr: Box<ast::Expr>) -> ast::Stmt {
     })
 }
 
-fn create_use_lexical_scope(use_lexical_scope: &Id, scoped_idents: &[Id]) -> ast::Stmt {
+fn create_use_lexical_scope(use_lexical_scope: &Id, scoped_idents: &[Id], nameStr: &str) -> ast::Stmt {
+    println!("use_lexical_scope: {}", new_ident_from_id(
+        use_lexical_scope,
+    ));
+    println!("scoped_idents: {:?}", scoped_idents);
     ast::Stmt::Decl(ast::Decl::Var(Box::new(ast::VarDecl {
         span: DUMMY_SP,
         declare: false,
@@ -413,7 +431,14 @@ fn create_use_lexical_scope(use_lexical_scope: &Id, scoped_idents: &[Id]) -> ast
                 )))),
                 span: DUMMY_SP,
                 type_args: None,
-                args: vec![],
+                args: vec![ast::ExprOrSpread {
+                    spread: None,
+                    expr: Box::new(ast::Expr::Lit(ast::Lit::Str(ast::Str {
+                        span: DUMMY_SP,
+                        value: nameStr.into(),
+                        raw: None,
+                    }))),
+                }]
             }))),
             name: ast::Pat::Array(ast::ArrayPat {
                 span: DUMMY_SP,

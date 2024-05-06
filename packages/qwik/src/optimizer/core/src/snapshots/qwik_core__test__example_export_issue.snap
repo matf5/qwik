@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$ } from '@builder.io/qwik';
+import { component$ } from '@decoration/qwik';
 
 const App = component$(() => {
     return (
@@ -27,8 +27,8 @@ export default App;
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 const App = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./app_component_ckepmxzlub0"), "App_component_ckEPmXZlub0"));
 export const Root = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./root_component_royhjyacbye"), "Root_component_royhjYaCbYE"));
 const Other = 12;
@@ -41,7 +41,7 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 ============================= root_component_royhjyacbye.js (ENTRY POINT)==
 
 import { _auto_App as App } from "./test";
-import { _jsxC } from "@builder.io/qwik";
+import { _jsxC } from "@decoration/qwik";
 export const Root_component_royhjYaCbYE = (props)=>{
     return /*#__PURE__*/ _jsxC(App, null, 3, "u6_1");
 };
@@ -69,7 +69,7 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= app_component_ckepmxzlub0.js (ENTRY POINT)==
 
-import { _jsxQ } from "@builder.io/qwik";
+import { _jsxQ } from "@decoration/qwik";
 export const App_component_ckEPmXZlub0 = ()=>{
     return /*#__PURE__*/ _jsxQ("div", null, null, "hola", 3, "u6_0");
 };

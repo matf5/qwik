@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { $, component$ } from '@builder.io/qwik';
+import { $, component$ } from '@decoration/qwik';
 
 export const Foo = component$(({foo}) => {
     const arg0 = 20;
@@ -31,7 +31,7 @@ export const Bar = component$(({bar}) => {
 
 ============================= foo_component_htdrsvublie.jsx (ENTRY POINT)==
 
-import { qrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
 export const Foo_component_HTDRsvUbLiE = (props)=>{
     return /*#__PURE__*/ qrl(()=>import("./foo_component_1_dvu6fitwgly"), "Foo_component_1_DvU6FitWglY", [
         props
@@ -61,8 +61,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= test.jsx ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const Foo = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./foo_component_htdrsvublie"), "Foo_component_HTDRsvUbLiE"));
 export const Bar = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./bar_component_l80ps8hxf1y"), "Bar_component_L80pS8Hxf1Y"));
 
@@ -70,7 +70,7 @@ export const Bar = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./ba
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;AAGA,OAAO,MAAM,oBAAM,wGAUjB;AAEF,OAAO,MAAM,oBAAM,wGAQjB\"}")
 ============================= bar_component_l80ps8hxf1y.jsx (ENTRY POINT)==
 
-import { qrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
 export const Bar_component_L80pS8Hxf1Y = (props)=>{
     return /*#__PURE__*/ qrl(()=>import("./bar_component_1_0xsynsnvu3k"), "Bar_component_1_0xSyNSnVu3k", [
         props
@@ -100,9 +100,9 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= foo_component_1_dvu6fitwgly.jsx (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 export const Foo_component_1_DvU6FitWglY = ()=>{
-    const [props] = useLexicalScope();
+    const [props] = useLexicalScope("Foo_component_1_DvU6FitWglY");
     const fn = ({ aaa  })=>aaa;
     return <div>
 
@@ -110,7 +110,6 @@ export const Foo_component_1_DvU6FitWglY = ()=>{
 
             </div>;
 };
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";2CAKa;;IACL,MAAM,KAAK,CAAC,EAAC,IAAG,EAAC,GAAK;IACtB,QACK,IAAI;;cACH,OANkB,KAMZ,MALH,GAKc;;YACnB,EAAE\"}")
@@ -135,16 +134,15 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= bar_component_1_0xsynsnvu3k.jsx (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 export const Bar_component_1_0xSyNSnVu3k = ()=>{
-    const [props] = useLexicalScope();
+    const [props] = useLexicalScope("Bar_component_1_0xSyNSnVu3k");
     return <div>
 
               {props.bar}
 
             </div>;
 };
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";2CAgBa;;IACL,QACK,IAAI;;cACH,OAJkB,IAIb;;YACP,EAAE\"}")

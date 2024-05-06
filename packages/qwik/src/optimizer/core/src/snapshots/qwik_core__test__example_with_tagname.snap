@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { $, component$ } from '@builder.io/qwik';
+import { $, component$ } from '@decoration/qwik';
 
 export const Foo = component$(() => {
     return $(() => {
@@ -20,7 +20,7 @@ export const Foo = component$(() => {
 
 ============================= foo_component_htdrsvublie.tsx (ENTRY POINT)==
 
-import { qrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
 export const Foo_component_HTDRsvUbLiE = ()=>{
     return /*#__PURE__*/ qrl(()=>import("./foo_component_1_dvu6fitwgly"), "Foo_component_1_DvU6FitWglY");
 };
@@ -53,7 +53,6 @@ export const Foo_component_1_DvU6FitWglY = ()=>{
 
             </div>;
 };
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\"2CAIa,IAAM;IACX,QACK,IAAI;;YACL,EAAE;AAEV\"}")
@@ -78,8 +77,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= test.tsx ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const Foo = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./foo_component_htdrsvublie"), "Foo_component_HTDRsvUbLiE"), {
     tagName: "my-foo"
 });

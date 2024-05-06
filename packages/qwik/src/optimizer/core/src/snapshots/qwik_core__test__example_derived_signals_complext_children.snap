@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useStore, mutable } from '@builder.io/qwik';
+import { component$, useStore, mutable } from '@decoration/qwik';
 
 import {dep} from './file';
 
@@ -27,12 +27,12 @@ export const App = component$(() => {
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { _jsxC } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
-import { Fragment as _Fragment } from "@builder.io/qwik/jsx-runtime";
-import { useStore } from '@builder.io/qwik';
+import { componentQrl } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { _jsxC } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
+import { Fragment as _Fragment } from "@decoration/qwik/jsx-runtime";
+import { useStore } from '@decoration/qwik';
 const App_component_ckEPmXZlub0 = ()=>{
     useSignal(0);
     const store = useStore({});

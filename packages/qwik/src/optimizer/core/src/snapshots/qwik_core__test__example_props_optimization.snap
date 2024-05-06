@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { $, component$, useTask$ } from '@builder.io/qwik';
+import { $, component$, useTask$ } from '@decoration/qwik';
 import { CONST } from 'const';
 export const Works = component$(({
     count,
@@ -48,14 +48,14 @@ export const NoWorks3 = component$(({count, stuff = hola()}) => {
 
 ============================= test.js ==
 
-import { _restProps } from "@builder.io/qwik";
-import { componentQrl } from "@builder.io/qwik";
-import { useTaskQrl } from "@builder.io/qwik";
-import { useLexicalScope } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
-import { _fnSignal } from "@builder.io/qwik";
-import { _jsxS } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
+import { _restProps } from "@decoration/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { useTaskQrl } from "@decoration/qwik";
+import { useLexicalScope } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { _jsxS } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
 export const Works = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl((props)=>{
     const rest = _restProps(props, [
         "count",
@@ -66,7 +66,7 @@ export const Works = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl((props)
     ]);
     console.log(props.stuff, props.some ?? 3);
     useTaskQrl(/*#__PURE__*/ inlinedQrl(({ track  })=>{
-        const [props, rest] = useLexicalScope();
+        const [props, rest] = useLexicalScope("Works_component_useTask_pjo5U5Ikll0");
         track(()=>props.count);
         console.log(props.count, rest, props.stuff, props.some ?? 3, props.stuffDefault ?? 123);
     }, "Works_component_useTask_pjo5U5Ikll0", [
@@ -95,7 +95,7 @@ export const Works = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl((props)
 export const NoWorks2 = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl(({ count , stuff: { hey  }  })=>{
     console.log(hey);
     useTaskQrl(/*#__PURE__*/ inlinedQrl(({ track  })=>{
-        const [count] = useLexicalScope();
+        const [count] = useLexicalScope("NoWorks2_component_useTask_lXiqwbxxjq0");
         track(()=>count);
         console.log(count);
     }, "NoWorks2_component_useTask_lXiqwbxxjq0", [
@@ -108,7 +108,7 @@ export const NoWorks2 = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl(({ c
 export const NoWorks3 = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl(({ count , stuff =hola()  })=>{
     console.log(stuff);
     useTaskQrl(/*#__PURE__*/ inlinedQrl(({ track  })=>{
-        const [count] = useLexicalScope();
+        const [count] = useLexicalScope("NoWorks3_component_useTask_3cQGU0s1VwU");
         track(()=>count);
         console.log(count);
     }, "NoWorks3_component_useTask_3cQGU0s1VwU", [

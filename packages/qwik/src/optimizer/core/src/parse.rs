@@ -276,7 +276,7 @@ pub fn transform_code(config: TransformCodeOptions) -> Result<TransformOutput, a
                             react_options.next = Some(true);
                             react_options.throw_if_namespace = Some(false);
                             react_options.runtime = Some(react::Runtime::Automatic);
-                            react_options.import_source = Some("@builder.io/qwik".to_string());
+                            react_options.import_source = Some("@decoration/qwik".to_string());
                         };
                         main_module = main_module.fold_with(&mut react::react(
                             Lrc::clone(&source_map),

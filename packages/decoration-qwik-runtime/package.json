@@ -1,0 +1,24 @@
+{
+  "name": "@decoration/qwik",
+  "version": "0.0.1-beta.4",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "types": "lib/types/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "rollup-plugin-typescript2": "^0.34.1",
+    "vite-plugin-dts": "^3.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

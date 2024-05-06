@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useTask$, useStore, useStyles$ } from '@builder.io/qwik';
+import { component$, useTask$, useStore, useStyles$ } from '@decoration/qwik';
 import mongo from 'mongodb';
 import redis from 'redis';
 
@@ -46,11 +46,11 @@ export const Child = component$(() => {
 
 ============================= parent_component_usetask_gdh1etuwqbu.js ==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 import mongo from "mongodb";
 import redis from "redis";
 export const Parent_component_useTask_gDH1EtUWqBU = async ()=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("Parent_component_useTask_gDH1EtUWqBU");
     state.text = await mongo.users();
     redis.set(state.text);
 };
@@ -78,8 +78,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const Parent = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./entry_Parent"), "Parent_component_0TaiDayHrlo"));
 export const Child = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./entry_Child"), "Child_component_9GyF01GDKqw"));
 
@@ -87,10 +87,10 @@ export const Child = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;AAKA,OAAO,MAAM,uBAAS,8FAgBnB;AAEH,OAAO,MAAM,sBAAQ,4FAelB\"}")
 ============================= child_component_usetask_oh4n7zeqjku.js ==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 import mongo from "mongodb";
 export const Child_component_useTask_Oh4n7ZeqJkU = async ()=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("Child_component_useTask_Oh4n7ZeqJkU");
     state.text = await mongo.users();
 };
 
@@ -117,11 +117,11 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= parent_component_0taidayhrlo.js ==
 
-import { _fnSignal } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
-import { useStore } from "@builder.io/qwik";
-import { useTaskQrl } from "@builder.io/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
+import { useStore } from "@decoration/qwik";
+import { useTaskQrl } from "@decoration/qwik";
 export const Parent_component_0TaiDayHrlo = ()=>{
     const state = useStore({
         text: ''
@@ -185,11 +185,11 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= child_component_9gyf01gdkqw.js ==
 
-import { _fnSignal } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
-import { useStore } from "@builder.io/qwik";
-import { useTaskQrl } from "@builder.io/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
+import { useStore } from "@decoration/qwik";
+import { useTaskQrl } from "@decoration/qwik";
 export const Child_component_9GyF01GDKqw = ()=>{
     const state = useStore({
         text: ''
@@ -255,7 +255,6 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 
 export { Child_component_useTask_Oh4n7ZeqJkU } from "./child_component_usetask_oh4n7zeqjku";
 export { Child_component_9GyF01GDKqw } from "./child_component_9gyf01gdkqw";
-export { _hW } from "@builder.io/qwik";
 
 
 None
@@ -263,7 +262,6 @@ None
 
 export { Parent_component_useTask_gDH1EtUWqBU } from "./parent_component_usetask_gdh1etuwqbu";
 export { Parent_component_0TaiDayHrlo } from "./parent_component_0taidayhrlo";
-export { _hW } from "@builder.io/qwik";
 
 
 None

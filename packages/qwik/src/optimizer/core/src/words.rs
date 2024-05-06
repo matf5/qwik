@@ -19,8 +19,8 @@ lazy_static! {
     pub static ref QHOOK: JsWord = JsWord::from("$");
     pub static ref Q_SYNC: JsWord = JsWord::from("sync$");
     pub static ref QWIK_INTERNAL: JsWord = JsWord::from("qwik");
-    pub static ref BUILDER_IO_QWIK: JsWord = JsWord::from("@builder.io/qwik");
-    pub static ref BUILDER_IO_QWIK_BUILD: JsWord = JsWord::from("@builder.io/qwik/build");
+    pub static ref BUILDER_IO_QWIK: JsWord = JsWord::from("@decoration/qwik");
+    pub static ref BUILDER_IO_QWIK_BUILD: JsWord = JsWord::from("@decoration/qwik/build");
     pub static ref BUILDER_IO_QWIK_JSX: JsWord = JsWord::from("@builder.io/qwik/jsx-runtime");
     pub static ref BUILDER_IO_QWIK_JSX_DEV: JsWord =
         JsWord::from("@builder.io/qwik/jsx-dev-runtime");

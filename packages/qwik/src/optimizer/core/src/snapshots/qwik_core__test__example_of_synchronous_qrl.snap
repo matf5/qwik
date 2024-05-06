@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-        import { sync$, component$ } from "@builder.io/qwik";
+        import { sync$, component$ } from "@decoration/qwik";
 
         export default component$(() => {
         return (
@@ -24,18 +24,18 @@ expression: output
         
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export default /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./test_component_luxexe0dqrg"), "test_component_LUXeXe0DQrg"));
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;AAGQ,6BAAe,0GAaZ\"}")
 ============================= test_component_luxexe0dqrg.js (ENTRY POINT)==
 
-import { Fragment as _Fragment } from "@builder.io/qwik/jsx-runtime";
-import { _jsxC } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { _qrlSync } from "@builder.io/qwik";
+import { Fragment as _Fragment } from "@decoration/qwik/jsx-runtime";
+import { _jsxC } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { _qrlSync } from "@decoration/qwik";
 export const test_component_LUXeXe0DQrg = ()=>{
     return /*#__PURE__*/ _jsxC(_Fragment, {
         children: [

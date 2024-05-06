@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { $, component$ } from '@builder.io/qwik';
+import { $, component$ } from '@decoration/qwik';
 
 export const Foo = component$(({color}) => {
     return (
@@ -67,9 +67,9 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= buttonarrow_button_onclick_9npo43figik.tsx (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 export const ButtonArrow_button_onClick_9npo43fIGik = ()=>{
-    const [color, text] = useLexicalScope();
+    const [color, text] = useLexicalScope("ButtonArrow_button_onClick_9npo43fIGik");
     return console.log(text, color);
 };
 
@@ -96,9 +96,9 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= button_button_onclick_nsm0jyv00jw.tsx (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 export const Button_button_onClick_NsM0JYV00Jw = ()=>{
-    const [color, text] = useLexicalScope();
+    const [color, text] = useLexicalScope("Button_button_onClick_NsM0JYV00Jw");
     return console.log(text, color);
 };
 
@@ -125,8 +125,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= test.tsx ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const Foo = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./foo_component_htdrsvublie"), "Foo_component_HTDRsvUbLiE"), {
     tagName: "my-foo"
 });

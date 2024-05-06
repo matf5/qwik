@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$ } from '@builder.io/qwik';
+import { component$ } from '@decoration/qwik';
 
 export const AtomStatus = component$(({ctx,atom})=>{
     let status = atom.status;
@@ -22,15 +22,15 @@ export const AtomStatus = component$(({ctx,atom})=>{
 
 ============================= test.jsx ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { useLexicalScope } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { useLexicalScope } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
 export const AtomStatus = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl((props)=>{
     let status = props.atom.status;
     if (!props.atom.real) status = "WILL-VANISH";
     else if (JSON.stringify(props.atom.atom) == JSON.stringify(props.atom.real)) status = "WTFED";
     return <span title={props.atom.ID} onClick$={/*#__PURE__*/ inlinedQrl((ev)=>{
-        const [props] = useLexicalScope();
+        const [props] = useLexicalScope("AtomStatus_component_span_onClick_Owf5fKaOlF0");
         return atomStatusClick(props.ctx, ev, [
             props.atom
         ]);

@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { $, component$ } from '@builder.io/qwik';
+import { $, component$ } from '@decoration/qwik';
 
 export const [a, {b, v1: [c], d=v2, ...e}, f=v3, ...g] = obj;
 
@@ -31,7 +31,7 @@ export const Footer = component$();
 
 ============================= header_component_uvbjufyfvdo.jsx (ENTRY POINT)==
 
-import { qrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
 export const Header_component_UVBJuFYfvDo = ()=>{
     return /*#__PURE__*/ qrl(()=>import("./header_component_1_uwm1kg0igo0"), "Header_component_1_uWM1kg0IGO0");
 };
@@ -59,8 +59,8 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/project/test.tsx\"],\"names\"
 */
 ============================= project/test.jsx ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const [a, { b , v1: [c] , d =v2 , ...e }, f = v3, ...g] = obj;
 const exp1 = 1;
 const internal = 2;
@@ -95,7 +95,6 @@ export const Header_component_1_uWM1kg0IGO0 = ()=><Footer>
             <div>{v1}{v2}{v3}{obj}</div>
 
         </Footer>;
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/project/test.tsx\"],\"names\":[],\"mappings\":\";;;;;;;;;;;;8CAea,KACJ,OAAO;;YACJ,CAAC,KAAK,GAAG,GAAG,GAAG,GAAG,GAAG,GAAG,MAAM,UAAU,KAAK,KAAK,YAAY,IAAI;;YAClE,CAAC,KAAK,IAAI,IAAI,IAAI,MAAM,IAAI;;QAChC,EAAE\"}")

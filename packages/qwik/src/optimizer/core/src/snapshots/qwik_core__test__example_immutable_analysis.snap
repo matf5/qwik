@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useStore, $ } from '@builder.io/qwik';
+import { component$, useStore, $ } from '@decoration/qwik';
 import importedValue from 'v';
 import styles from './styles.module.css';
 
@@ -57,8 +57,8 @@ export const App = component$((props) => {
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const App = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./app_component_ckepmxzlub0"), "App_component_ckEPmXZlub0"));
 
 
@@ -90,9 +90,9 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= app_component__fragment_div_immutable4_qt1dno4izxo.js (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 export const App_component__Fragment_Div_immutable4_QT1DNo4IZXo = (ev)=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("App_component__Fragment_Div_immutable4_QT1DNo4IZXo");
     return console.log(state.count);
 };
 
@@ -119,15 +119,15 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= app_component_ckepmxzlub0.js (ENTRY POINT)==
 
-import { Fragment as _Fragment } from "@builder.io/qwik/jsx-runtime";
-import { _IMMUTABLE } from "@builder.io/qwik";
-import { _fnSignal } from "@builder.io/qwik";
-import { _jsxC } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
+import { Fragment as _Fragment } from "@decoration/qwik/jsx-runtime";
+import { _IMMUTABLE } from "@decoration/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { _jsxC } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
 import importedValue from "v";
-import { qrl } from "@builder.io/qwik";
+import { qrl } from "@decoration/qwik";
 import styles from "./styles.module.css";
-import { useStore } from "@builder.io/qwik";
+import { useStore } from "@decoration/qwik";
 export const App_component_ckEPmXZlub0 = (props)=>{
     const state = useStore({
         count: 0
@@ -241,13 +241,12 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= app_component_remove_pu6yoc5p6sy.js (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 export const App_component_remove_pU6yOC5P6sY = (id)=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("App_component_remove_pU6yOC5P6sY");
     const d = state.data;
     d.splice(d.findIndex((d)=>d.id === id), 1);
 };
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";gDAQqB,CAAC;;IACd,MAAM,IAAI,MAAM,IAAI;IACpB,EAAE,MAAM,CACN,EAAE,SAAS,CAAC,CAAC,IAAM,EAAE,EAAE,KAAK,KAC5B\"}")

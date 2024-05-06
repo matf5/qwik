@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useBrowserVisibleTask$, useStore, useStyles$ } from '@builder.io/qwik';
+import { component$, useBrowserVisibleTask$, useStore, useStyles$ } from '@decoration/qwik';
 
 export const Child = component$(() => {
     const state = useStore({
@@ -32,9 +32,9 @@ export const Child = component$(() => {
 
 ============================= child_component_usebrowservisibletask_0igfpoyjmqa.js (ENTRY POINT)==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 export const Child_component_useBrowserVisibleTask_0IGFPOyJmQA = ()=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("Child_component_useBrowserVisibleTask_0IGFPOyJmQA");
     const timer = setInterval(()=>{
         state.count++;
     }, 1000);
@@ -42,7 +42,6 @@ export const Child_component_useBrowserVisibleTask_0IGFPOyJmQA = ()=>{
         clearInterval(timer);
     };
 };
-export { _hW } from "@builder.io/qwik";
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";iEAS2B;;IACnB,MAAM,QAAQ,YAAY,IAAM;QAChC,MAAM,KAAK;IACX,GAAG;IACH,OAAO,IAAM;QACb,cAAc;IACd\"}")
@@ -67,19 +66,19 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const Child = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./child_component_9gyf01gdkqw"), "Child_component_9GyF01GDKqw"));
 
 
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;AAGA,OAAO,MAAM,sBAAQ,4GAoBlB\"}")
 ============================= child_component_9gyf01gdkqw.js (ENTRY POINT)==
 
-import { _fnSignal } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
-import { useBrowserVisibleTaskQrl } from "@builder.io/qwik";
-import { useStore } from "@builder.io/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
+import { useBrowserVisibleTaskQrl } from "@decoration/qwik";
+import { useStore } from "@decoration/qwik";
 export const Child_component_9GyF01GDKqw = ()=>{
     const state = useStore({
         count: 0

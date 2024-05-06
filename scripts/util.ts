@@ -53,6 +53,7 @@ export interface BuildConfig {
   qwiklabs?: boolean;
   qwikauth?: boolean;
   qwikworker?: boolean;
+  decorationQwik?: boolean;
   supabaseauthhelpers?: boolean;
   cli?: boolean;
   eslint?: boolean;

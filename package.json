@@ -126,6 +126,7 @@
     "build.cli.prod": "tsm scripts/index.ts --cli",
     "build.core": "tsm scripts/index.ts --tsc --build --qwikcity --api --platform-binding-wasm-copy",
     "build.eslint": "tsm scripts/index.ts --eslint",
+    "build.decorationQwik": "tsm scripts/index.ts --decorationQwik",
     "build.full": "tsm scripts/index.ts --tsc --tsc-docs --build --supabaseauthhelpers --api --eslint --qwikcity --qwikworker --qwiklabs --qwikreact --qwikauth --cli --platform-binding --wasm",
     "build.local": "tsm scripts/index.ts --tsc --tsc-docs --build --supabaseauthhelpers --api --eslint --qwikcity --qwikworker --qwiklabs --qwikreact --qwikauth --cli --platform-binding-wasm-copy",
     "build.only_javascript": "tsm scripts/index.ts --tsc --build --api",

@@ -136,6 +136,7 @@ pub struct QwikTransformOptions<'a> {
 fn convert_signal_word(id: &JsWord) -> Option<JsWord> {
     let ident_name = id.as_ref();
     let has_signal = ident_name.ends_with(SIGNAL);
+    println!("convert_signal_word: {} {}", ident_name, has_signal);
     if has_signal {
         let new_specifier = [&ident_name[0..ident_name.len() - 1], LONG_SUFFIX].concat();
         Some(JsWord::from(new_specifier))
@@ -175,11 +176,11 @@ impl<'a> QwikTransform<'a> {
                     import.source.as_ref(),
                     import.specifier.as_ref(),
                 ) {
-                    (ImportKind::Named, "@builder.io/qwik", "jsx") => Some(id.clone()),
-                    (ImportKind::Named, "@builder.io/qwik", "jsxs") => Some(id.clone()),
-                    (ImportKind::Named, "@builder.io/qwik", "jsxDEV") => Some(id.clone()),
-                    (ImportKind::Named, "@builder.io/qwik/jsx-runtime", _) => Some(id.clone()),
-                    (ImportKind::Named, "@builder.io/qwik/jsx-dev-runtime", _) => Some(id.clone()),
+                    (ImportKind::Named, "@decoration/qwik", "jsx") => Some(id.clone()),
+                    (ImportKind::Named, "@decoration/qwik", "jsxs") => Some(id.clone()),
+                    (ImportKind::Named, "@decoration/qwik", "jsxDEV") => Some(id.clone()),
+                    (ImportKind::Named, "@decoration/qwik/jsx-runtime", _) => Some(id.clone()),
+                    (ImportKind::Named, "@decoration/qwik/jsx-dev-runtime", _) => Some(id.clone()),
                     _ => None,
                 }
             })
@@ -197,15 +198,15 @@ impl<'a> QwikTransform<'a> {
                 ) {
                     (
                         ImportKind::Named,
-                        "@builder.io/qwik/jsx-runtime" | "@builder.io/qwik/jsx-dev-runtime",
+                        "@decoration/qwik/jsx-runtime" | "@decoration/qwik/jsx-dev-runtime",
                         "Fragment",
                     ) => Some(id.clone()),
                     (
                         ImportKind::Named,
-                        "@builder.io/qwik",
+                        "@decoration/qwik",
                         "Fragment" | "RenderOnce" | "HTMLFragment",
                     ) => Some(id.clone()),
-                    (ImportKind::Named, "@builder.io/qwik-city", "Link") => Some(id.clone()),
+                    (ImportKind::Named, "@decoration/qwik-city", "Link") => Some(id.clone()),
                     (_, source, _) => {
                         if source.ends_with("?jsx") || source.ends_with(".md") {
                             Some(id.clone())
@@ -687,7 +688,7 @@ impl<'a> QwikTransform<'a> {
         } else if self.is_inline() {
             let folded = if !hook_data.scoped_idents.is_empty() {
                 let new_local = self.ensure_core_import(&USE_LEXICAL_SCOPE);
-                transform_function_expr(folded, &new_local, &hook_data.scoped_idents)
+                transform_function_expr(folded, &new_local, &hook_data.scoped_idents, &symbol_name)
             } else {
                 folded
             };

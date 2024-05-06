@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$ } from '@builder.io/qwik';
+import { component$ } from '@decoration/qwik';
 
 export const FOO_MAPPING = {
     A: 1,
@@ -22,8 +22,8 @@ export const FOO_MAPPING = {
 
 ============================= test.jsx ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
 export const FOO_MAPPING = {
     A: 1,
     B: 2,

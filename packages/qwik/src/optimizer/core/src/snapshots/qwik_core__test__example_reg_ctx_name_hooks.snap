@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { $, component$, server$ } from '@builder.io/qwik';
+import { $, component$, server$ } from '@decoration/qwik';
 import { foo } from './foo';
 export const Works = component$((props) => {
     const text = 'hola';
@@ -20,14 +20,14 @@ export const Works = component$((props) => {
 ============================= test.js ==
 
 import "./foo";
-import { componentQrl } from "@builder.io/qwik";
-import { serverQrl } from "@builder.io/qwik";
-import { _regSymbol } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { _noopQrl } from "@builder.io/qwik";
-import { _jsxC } from "@builder.io/qwik";
-import { Fragment as _Fragment } from "@builder.io/qwik/jsx-runtime";
+import { componentQrl } from "@decoration/qwik";
+import { serverQrl } from "@decoration/qwik";
+import { _regSymbol } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { _noopQrl } from "@decoration/qwik";
+import { _jsxC } from "@decoration/qwik";
+import { Fragment as _Fragment } from "@decoration/qwik/jsx-runtime";
 export const Works = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl((props)=>{
     return /*#__PURE__*/ _jsxC(_Fragment, {
         children: [

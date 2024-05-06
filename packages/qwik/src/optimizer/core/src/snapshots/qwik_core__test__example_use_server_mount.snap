@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$, useServerMount$, useStore, useStyles$ } from '@builder.io/qwik';
+import { component$, useServerMount$, useStore, useStyles$ } from '@decoration/qwik';
 import mongo from 'mongodb';
 import redis from 'redis';
 
@@ -46,8 +46,8 @@ export const Child = component$(() => {
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
 export const Parent = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./entry_Parent"), "Parent_component_0TaiDayHrlo"));
 export const Child = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./entry_Child"), "Child_component_9GyF01GDKqw"));
 
@@ -55,11 +55,11 @@ export const Child = /*#__PURE__*/ componentQrl(/*#__PURE__*/ qrl(()=>import("./
 Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"mappings\":\";;AAKA,OAAO,MAAM,uBAAS,8FAgBnB;AAEH,OAAO,MAAM,sBAAQ,4FAelB\"}")
 ============================= parent_component_0taidayhrlo.js ==
 
-import { _fnSignal } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
-import { useServerMountQrl } from "@builder.io/qwik";
-import { useStore } from "@builder.io/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
+import { useServerMountQrl } from "@decoration/qwik";
+import { useStore } from "@decoration/qwik";
 export const Parent_component_0TaiDayHrlo = ()=>{
     const state = useStore({
         text: ''
@@ -98,10 +98,10 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= child_component_useservermount_lne1dxu8z28.js ==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 import mongo from "mongodb";
 export const Child_component_useServerMount_lnE1dxU8z28 = async ()=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("Child_component_useServerMount_lnE1dxU8z28");
     state.text = await mongo.users();
 };
 
@@ -153,11 +153,11 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= child_component_9gyf01gdkqw.js ==
 
-import { _fnSignal } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { qrl } from "@builder.io/qwik";
-import { useServerMountQrl } from "@builder.io/qwik";
-import { useStore } from "@builder.io/qwik";
+import { _fnSignal } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { qrl } from "@decoration/qwik";
+import { useServerMountQrl } from "@decoration/qwik";
+import { useStore } from "@decoration/qwik";
 export const Child_component_9GyF01GDKqw = ()=>{
     const state = useStore({
         text: ''
@@ -196,11 +196,11 @@ Some("{\"version\":3,\"sources\":[\"/user/qwik/src/test.tsx\"],\"names\":[],\"ma
 */
 ============================= parent_component_useservermount_cqrqm0hrrm8.js ==
 
-import { useLexicalScope } from "@builder.io/qwik";
+import { useLexicalScope } from "@decoration/qwik";
 import mongo from "mongodb";
 import redis from "redis";
 export const Parent_component_useServerMount_cQrQm0HrrM8 = async ()=>{
-    const [state] = useLexicalScope();
+    const [state] = useLexicalScope("Parent_component_useServerMount_cQrQm0HrrM8");
     state.text = await mongo.users();
     redis.set(state.text);
 };

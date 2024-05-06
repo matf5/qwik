@@ -5,7 +5,7 @@ expression: output
 ==INPUT==
 
 
-import { component$ } from '@builder.io/qwik';
+import { component$ } from '@decoration/qwik';
 
 export const Issue3795 = component$(() => {
     let base = "foo";
@@ -19,9 +19,9 @@ export const Issue3795 = component$(() => {
 
 ============================= test.js ==
 
-import { componentQrl } from "@builder.io/qwik";
-import { _jsxQ } from "@builder.io/qwik";
-import { inlinedQrl } from "@builder.io/qwik";
+import { componentQrl } from "@decoration/qwik";
+import { _jsxQ } from "@decoration/qwik";
+import { inlinedQrl } from "@decoration/qwik";
 export const Issue3795 = /*#__PURE__*/ componentQrl(/*#__PURE__*/ inlinedQrl(()=>{
     let base = "foo";
     const firstAssignment = base;
